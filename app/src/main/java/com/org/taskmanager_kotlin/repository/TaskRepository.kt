@@ -1,6 +1,7 @@
 package com.org.taskmanager_kotlin.repository
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.org.taskmanager_kotlin.database.TaskDao
 import com.org.taskmanager_kotlin.database.TaskDatabase
 import com.org.taskmanager_kotlin.model.Task
@@ -15,11 +16,11 @@ object TaskRepository :IRepository<Task>{
         dao= database.getTaskDao()
     }
 
-    override fun get(id: Long): Task {
+    override fun get(id: Long): LiveData<Task> {
         return dao.get(id)
     }
 
-    override fun getList(): List<Task> {
+    override fun getList():LiveData<List<Task>> {
         return dao.getList()
     }
 

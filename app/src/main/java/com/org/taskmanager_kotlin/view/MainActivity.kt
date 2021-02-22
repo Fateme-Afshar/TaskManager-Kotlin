@@ -1,12 +1,9 @@
 package com.org.taskmanager_kotlin.view
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.org.taskmanager_kotlin.R
+import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : SingleFragmentActivity() {
+    override fun getFragment(): Fragment {
+        return MainFragment.newInstance()
     }
 }
