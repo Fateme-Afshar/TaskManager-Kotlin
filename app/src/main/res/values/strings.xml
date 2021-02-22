@@ -2,4 +2,8 @@
     <string name="app_name">TaskManager</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="task_title">task title</string>
+    <string name="task_title_hint">Task Title</string>
+    <string name="task_description_hint">Task Description</string>
+    <string name="btn_save">Save</string>
 </resources>

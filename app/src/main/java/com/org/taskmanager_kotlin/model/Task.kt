@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "taskTable")
 data class Task (@PrimaryKey(autoGenerate = true)@ColumnInfo(name = "id")
-                 private val taskId:Long=0,
+                  val taskId:Long=0,
                  @ColumnInfo(name = "title")
-                 private var title:String="",
+                  var title:String="",
                  @ColumnInfo(name = "description")
-                 private var description:String="",
+                  var description:String="",
                  @ColumnInfo(name = "state")
-                 private var state:TaskState=TaskState.TODO)
+                  var state:TaskState=TaskState.TODO)

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="task"
+            type="com.org.taskmanager_kotlin.model.Task" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imv_task"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                tools:src="@drawable/img_task"
+                android:src="@drawable/ic_img_empty"
+                />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextStyle"
+            android:id="@+id/task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imv_task"
+            android:layout_toRightOf="@+id/imv_task"
+            tools:text="@string/task_title"
+            android:text="@{task.title}"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/indigo" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-64dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_trashcan" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextStyle"
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imv_task"
+            android:layout_toRightOf="@+id/imv_task"
+            android:layout_below="@+id/task_title"
+            android:layout_marginLeft="5dp"
+            android:textSize="15sp"
+            android:text="@{task.description}"
+            tools:text="this is my task" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/task_state"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/content"
+            android:textColor="@color/black"
+            android:text="@{task.state.toString()}"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/imv_task"
+            android:layout_alignParentRight="true"
+            android:background="#BDBDBA"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp" />
+
+    </RelativeLayout>
+</layout>
